@@ -45,7 +45,11 @@ public class test1 {
 	    MongoCursor cursor = coll.find().iterator();
 	    while(cursor.hasNext()){
 	        Document document = (Document)cursor.next();
-	        System.out.println(String.format("Doc[%d]: %s %s ",++counter,document.get("name"),document.toString()));
+	        System.out.println(String.format("Doc[%d]: name=%s city=%s status=%s enrolled=%s ",++counter,document.get("name"),
+	        		document.get("city"),
+	        		document.get("state"),
+	        		document.get("enrolled")
+	        		));
 //	        if(document != null){
 //	            Filters.add(document.get(Constants.MONGO_ELEMENT_URL_FIELD_NAME).toString());
 	        }
